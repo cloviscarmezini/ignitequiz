@@ -6,6 +6,7 @@ import TrophySvg from '../../assets/trophy.svg';
 import { THEME } from '../../styles/theme';
 
 import { styles } from './styles';
+import Animated, { BounceIn } from 'react-native-reanimated';
 
 export function Stars() {
   const backStartsBlinkAnimated = useLoop({
@@ -128,7 +129,11 @@ export function Stars() {
         />
       </Canvas>
 
-      <TrophySvg />
+      <Animated.View
+        entering={BounceIn}
+      >
+        <TrophySvg/>
+      </Animated.View>
     </View>
   );
 }
